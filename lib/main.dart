@@ -16,7 +16,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await CacheHelper.init();
   ServiceLocator().init();
-
+  await ThemeService.themeInit();
   runApp(const MyApp());
 }
 
