@@ -15,6 +15,7 @@ class BuildItemListViewBooks extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(
+            height: 170,
             width: 120,
             child: ClipRRect(
               borderRadius: BorderRadius.circular(12),
@@ -39,7 +40,7 @@ class BuildItemListViewBooks extends StatelessWidget {
               "jodi picoult",
               style: TextStyle(
                   color: colorText,
-                  fontSize: getResponsiveFontSize(context, fontSize: 14)),
+                  fontSize: getResponsiveFontSize(context, fontSize: 16)),
             ),
           )
         ],

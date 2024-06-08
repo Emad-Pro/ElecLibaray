@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../../../core/widget/text_title_group_books.dart';
 import 'main_books_build_category_listview_item.dart';
-import 'main_books_my_books_widget.dart';
 
 class MainBooksCategoryWidget extends StatelessWidget {
   const MainBooksCategoryWidget({

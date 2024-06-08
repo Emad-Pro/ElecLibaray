@@ -12,7 +12,7 @@ class BuildItemListViewBooksWithWidgetStack extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 130,
-      width: 100,
+      width: 120,
       child: Stack(
         children: [
           BuildItemListViewBooks(

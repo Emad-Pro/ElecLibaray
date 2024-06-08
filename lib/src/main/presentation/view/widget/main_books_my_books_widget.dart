@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import '../../../../../core/responsive_layout/app_styles.dart';
 import '../../../../../core/theme/colors.dart';
 import '../../../../../core/widget/build_item_listview_books_with_widget_stack.dart';
+import '../../../../../core/widget/text_title_group_books.dart';
 
 class MainBooksMyBooksWidget extends StatelessWidget {
   const MainBooksMyBooksWidget({
@@ -17,14 +18,13 @@ class MainBooksMyBooksWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // ign,ore: prefer_const_constructors
-          TextTitleGroupBooks(
+          const TextTitleGroupBooks(
             titleText: "My books",
             count: 99,
           ),
           Container(
             margin: const EdgeInsets.only(top: 15),
-            height: 200,
+            height: 220,
             child: ListView.separated(
               itemCount: 4,
               shrinkWrap: true,
@@ -41,23 +41,6 @@ class MainBooksMyBooksWidget extends StatelessWidget {
           )
         ],
       ),
-    );
-  }
-}
-
-class TextTitleGroupBooks extends StatelessWidget {
-  const TextTitleGroupBooks(
-      {super.key, required this.count, required this.titleText});
-  final int? count;
-  final String titleText;
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      "${titleText.tr(context)} ${count != null ? "(${count})" : ""}",
-      style: TextStyle(
-          color: kBackgroundColorGreen,
-          fontSize: getResponsiveFontSize(context, fontSize: 22),
-          fontWeight: FontWeight.bold),
     );
   }
 }
