@@ -9,7 +9,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'core/theme/theme.dart';
-import 'src/home/presentation/view/home_layout.dart';
+import 'src/home/home_layout.dart';
+import 'src/main/presentation/view/main_books_layout.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -52,7 +53,7 @@ class MyApp extends StatelessWidget {
               theme: ThemeService().lightMode(context),
               darkTheme: ThemeService().darkMode(context),
               themeMode: false ? ThemeMode.dark : ThemeMode.light,
-              home: const HomeLayout());
+              home: HomeLayout());
         },
       ),
     );

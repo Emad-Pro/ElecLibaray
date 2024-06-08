@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../../../../../core/shape_packge/arc.dart';
 import '../../../../../core/shape_packge/shape.dart';
 import '../../../../../core/theme/colors.dart';
-import 'listview_header_horizontal_arch.dart';
-import 'text_recently_add_horizontal_arch.dart';
+import 'main_books_listview_header_horizontal_arch.dart';
+import 'main_books_text_recently_add_widget.dart';
 
 class HeaderHorizontalArch extends StatelessWidget {
   const HeaderHorizontalArch({
@@ -26,8 +26,8 @@ class HeaderHorizontalArch extends StatelessWidget {
           child: const Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              TextRecentlyAddHorizontalArch(),
-              ListViewHeaderHorizontalArch(),
+              MainBooksTextRecentlyAddHorizontalArch(),
+              MainBooksListViewHeaderHorizontalArch(),
             ],
           ),
         ),

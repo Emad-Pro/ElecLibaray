@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/widget/build_book_mark_widget.dart';
-import 'build_item_listview_books_with_widget_stack.dart';
-import 'my_books_widget.dart';
+import '../../../../../core/widget/build_item_listview_books_with_widget_stack.dart';
+import 'main_books_my_books_widget.dart';
 
-class MyWashlistWidget extends StatelessWidget {
-  const MyWashlistWidget({
+class MainBooksMyWashlistWidget extends StatelessWidget {
+  const MainBooksMyWashlistWidget({
     super.key,
   });
 
@@ -22,17 +21,13 @@ class MyWashlistWidget extends StatelessWidget {
           ),
           Container(
             margin: const EdgeInsets.only(top: 15),
-            height: 200,
+            height: 230,
             child: ListView.separated(
               itemCount: images.length,
               shrinkWrap: true,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
                 return BuildItemListViewBooksWithWidgetStack(
-                  widget: BuildBookMarkWidget(
-                    value: false,
-                    onPressed: () {},
-                  ),
                   imagePath: images[index],
                 );
               },

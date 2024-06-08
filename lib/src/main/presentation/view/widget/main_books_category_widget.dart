@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import 'build_category_listview_item.dart';
-import 'my_books_widget.dart';
+import 'main_books_build_category_listview_item.dart';
+import 'main_books_my_books_widget.dart';
 
-class CategoryWidget extends StatelessWidget {
-  const CategoryWidget({
+class MainBooksCategoryWidget extends StatelessWidget {
+  const MainBooksCategoryWidget({
     super.key,
   });
 
@@ -27,7 +27,7 @@ class CategoryWidget extends StatelessWidget {
               itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.all(5.0),
-                  child: BuildCategoryListViewItem(
+                  child: MainBooksBuildCategoryListViewItem(
                     imagePath: categoryList[index],
                     nameCategory: categoryText[index],
                   ),

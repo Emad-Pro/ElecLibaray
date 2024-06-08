@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/responsive_layout/app_styles.dart';
 
-class BuildCategoryListViewItem extends StatelessWidget {
-  const BuildCategoryListViewItem(
+class MainBooksBuildCategoryListViewItem extends StatelessWidget {
+  const MainBooksBuildCategoryListViewItem(
       {super.key, required this.imagePath, required this.nameCategory});
   final String imagePath;
   final String nameCategory;

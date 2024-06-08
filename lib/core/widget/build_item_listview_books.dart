@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/responsive_layout/app_styles.dart';
+import '../responsive_layout/app_styles.dart';
 
 class BuildItemListViewBooks extends StatelessWidget {
   const BuildItemListViewBooks(
@@ -9,7 +9,7 @@ class BuildItemListViewBooks extends StatelessWidget {
   final String imagePath;
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: 120,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -33,11 +33,14 @@ class BuildItemListViewBooks extends StatelessWidget {
                   fontSize: getResponsiveFontSize(context, fontSize: 18)),
             ),
           ),
-          Text(
-            "jodi picoult",
-            style: TextStyle(
-                color: colorText,
-                fontSize: getResponsiveFontSize(context, fontSize: 16)),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              "jodi picoult",
+              style: TextStyle(
+                  color: colorText,
+                  fontSize: getResponsiveFontSize(context, fontSize: 14)),
+            ),
           )
         ],
       ),

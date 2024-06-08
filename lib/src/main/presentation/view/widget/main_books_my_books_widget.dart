@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/responsive_layout/app_styles.dart';
 import '../../../../../core/theme/colors.dart';
-import 'build_item_listview_books_with_widget_stack.dart';
+import '../../../../../core/widget/build_item_listview_books_with_widget_stack.dart';
 
-class MyBooksWidget extends StatelessWidget {
-  const MyBooksWidget({
+class MainBooksMyBooksWidget extends StatelessWidget {
+  const MainBooksMyBooksWidget({
     super.key,
   });
 
@@ -17,6 +17,7 @@ class MyBooksWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          // ign,ore: prefer_const_constructors
           TextTitleGroupBooks(
             titleText: "My books",
             count: 99,
@@ -30,11 +31,6 @@ class MyBooksWidget extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
                 return BuildItemListViewBooksWithWidgetStack(
-                  widget: Checkbox(
-                    value: true,
-                    onChanged: (value) {},
-                    activeColor: kBackgroundColorGreen,
-                  ),
                   imagePath: images[index],
                 );
               },

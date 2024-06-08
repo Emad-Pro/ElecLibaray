@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../screen/home_mobile_screen.dart';
-import 'build_item_listview_header.dart';
+import '../../../../../core/widget/build_item_listview_books.dart';
 
-class ListViewHeaderHorizontalArch extends StatelessWidget {
-  const ListViewHeaderHorizontalArch({
+class MainBooksListViewHeaderHorizontalArch extends StatelessWidget {
+  const MainBooksListViewHeaderHorizontalArch({
     super.key,
   });
 
@@ -25,7 +24,7 @@ class ListViewHeaderHorizontalArch extends StatelessWidget {
             );
           },
           separatorBuilder: (context, index) {
-            return SizedBox(
+            return const SizedBox(
               width: 20,
             );
           },

@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/responsive_layout/app_styles.dart';
 
-class TextRecentlyAddHorizontalArch extends StatelessWidget {
-  const TextRecentlyAddHorizontalArch({
+class MainBooksTextRecentlyAddHorizontalArch extends StatelessWidget {
+  const MainBooksTextRecentlyAddHorizontalArch({
     super.key,
   });
 

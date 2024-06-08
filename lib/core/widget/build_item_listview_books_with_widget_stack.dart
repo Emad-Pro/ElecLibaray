@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
-import 'build_item_listview_header.dart';
+import '../theme/colors.dart';
+import 'build_book_mark_widget.dart';
+import 'build_item_listview_books.dart';
 
 class BuildItemListViewBooksWithWidgetStack extends StatelessWidget {
   const BuildItemListViewBooksWithWidgetStack(
-      {super.key, required this.widget, required this.imagePath});
-  final Widget widget;
+      {super.key, required this.imagePath});
   final String imagePath;
   @override
   Widget build(BuildContext context) {
@@ -18,7 +19,19 @@ class BuildItemListViewBooksWithWidgetStack extends StatelessWidget {
             imagePath: imagePath,
             colorText: Theme.of(context).colorScheme.onSurface,
           ),
-          widget
+          Row(
+            children: [
+              Checkbox(
+                value: true,
+                onChanged: (value) {},
+                activeColor: kBackgroundColorGreen,
+              ),
+              BuildBookMarkWidget(
+                value: true,
+                onPressed: () {},
+              ),
+            ],
+          ),
         ],
       ),
     );
