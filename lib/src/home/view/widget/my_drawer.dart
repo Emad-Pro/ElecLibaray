@@ -1,7 +1,11 @@
 import 'package:elec_lib_app/core/AppLocalizations/app_localizations.dart';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/theme/colors.dart';
+import '../../view_model/cubit/home_cubit.dart';
+import 'build_drawer_item.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({
@@ -11,57 +15,36 @@ class MyDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      child: Column(
-        children: [
-          DrawerHeader(
-              child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+      child: BlocBuilder<HomeCubit, HomeState>(
+        builder: (context, state) {
+          return Column(
             children: [
-              Icon(
-                Icons.person,
-                size: 65,
-              ),
-              Text(
-                "${"Welcome".tr(context)}, Emad Younis!",
-                style: TextStyle(color: kBackgroundColorGreen),
+              DrawerHeader(
+                  child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  const Icon(
+                    Icons.person,
+                    size: 65,
+                  ),
+                  Text(
+                    "${"Welcome".tr(context)}, Emad Younis!",
+                    style: const TextStyle(color: kBackgroundColorGreen),
+                  ),
+                ],
+              )),
+              Expanded(
+                child: ListView.builder(
+                    itemCount: context.read<HomeCubit>().drawerPage.length,
+                    itemBuilder: (context, index) => BuildDrawerItem(
+                          drawerModel:
+                              context.read<HomeCubit>().drawerPage[index],
+                          index: index,
+                        )),
               )
             ],
-          )),
-          Column(
-            children: [
-              ListTile(
-                leading: Icon(Icons.person),
-                title: Text("Profile".tr(context)),
-                onTap: () {},
-              ),
-              ListTile(
-                leading: Icon(Icons.folder),
-                title: Text("Catalog".tr(context)),
-                onTap: () {},
-              ),
-              ListTile(
-                leading: Icon(Icons.groups_rounded),
-                title: Text("Groups".tr(context)),
-                onTap: () {},
-              ),
-              ListTile(
-                leading: Icon(Icons.event),
-                title: Text("Events".tr(context)),
-                onTap: () {},
-              ),
-              ListTile(
-                leading: Icon(Icons.settings),
-                title: Text("Settings".tr(context)),
-                onTap: () {},
-              ),
-              ListTile(
-                leading: Icon(Icons.logout),
-                title: Text("Sign out".tr(context)),
-                onTap: () {},
-              ),
-            ],
-          )
-        ],
+          );
+        },
       ),
     );
   }

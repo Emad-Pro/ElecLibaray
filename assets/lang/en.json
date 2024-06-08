@@ -26,5 +26,11 @@
     "Events": "Events",
     "Settings": "Settings",
     "Sign out": "Sign out",
-    "Books": "Books"
+    "Books": "Books",
+    "Language": "Language",
+    "You can switch between Arabic and English": "You can switch between Arabic and English",
+    "English": "English",
+    "Arabic": "Arabic",
+    "Theme Mode": "Theme Mode",
+    "You can switch between light mode and dark mode": "You can switch between light mode and dark mode"
 }

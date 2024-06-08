@@ -27,5 +27,12 @@
     "Events": "الاحداث",
     "Settings": "الاعدادات",
     "Sign out": "تسجيل الخروج",
-    "Books": "كتب"
+    "Books": "كتب",
+    "Home": "الصفحة الرئيسية",
+    "Language": "اللغة",
+    "You can switch between Arabic and English": "يمكنك التبديل بين اللغه العربية والانجليزية",
+    "English": "الانجليزية",
+    "Arabic": "العربية",
+    "Theme Mode": "الوضع الليلي",
+    "You can switch between light mode and dark mode": "يمكنك التبديل بين الوضع اليلي ووضع النهار"
 }

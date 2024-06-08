@@ -24,7 +24,7 @@ class MainBooksMyBooksWidget extends StatelessWidget {
           ),
           Container(
             margin: const EdgeInsets.only(top: 15),
-            height: 220,
+            height: 240,
             child: ListView.separated(
               itemCount: 4,
               shrinkWrap: true,

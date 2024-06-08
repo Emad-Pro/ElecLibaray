@@ -1,8 +1,7 @@
-import 'package:elec_lib_app/src/settings/view_model/cubit/settings_cubit.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../src/settings/view_model/cubit/settings_cubit.dart';
 import '../sharedPreferences/cacheHelper.dart';
 
 class ThemeService {
@@ -14,7 +13,7 @@ class ThemeService {
                 : "Cairo",
         brightness: Brightness.light,
         colorScheme: ColorScheme.light(
-          surface: Colors.grey.shade100,
+          surface: Colors.grey.shade300,
           primary: Colors.grey.shade200,
           secondary: Colors.grey.shade400,
           inversePrimary: Colors.grey.shade800,
@@ -44,6 +43,7 @@ class ThemeService {
   }
 
   static Future changeDarkMode() async {
+    print(darkModeValue);
     darkModeValue = !darkModeValue;
 
     await CacheHelper.saveData(key: "darkMode", value: darkModeValue);

@@ -1,5 +1,7 @@
 import 'package:elec_lib_app/src/home/view/widget/my_drawer.dart';
+import 'package:elec_lib_app/src/home/view_model/cubit/home_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../main/presentation/view/main_books_layout.dart';
 
@@ -8,11 +10,16 @@ class HomeTabletScreens extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Row(
         children: [
-          Expanded(flex: 3, child: MyDrawer()),
-          Expanded(flex: 7, child: MainBooksLayout()),
+          const Expanded(flex: 3, child: MyDrawer()),
+          Expanded(
+            flex: 7,
+            child: context
+                .read<HomeCubit>()
+                .homePage[context.read<HomeCubit>().state.selectedIndex],
+          ),
         ],
       ),
     );
