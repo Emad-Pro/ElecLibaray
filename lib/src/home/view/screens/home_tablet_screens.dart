@@ -3,10 +3,8 @@ import 'package:elec_lib_app/src/home/view_model/cubit/home_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../main/presentation/view/main_books_layout.dart';
-
 class HomeTabletScreens extends StatelessWidget {
-  const HomeTabletScreens({Key? key}) : super(key: key);
+  const HomeTabletScreens({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,9 +14,7 @@ class HomeTabletScreens extends StatelessWidget {
           const Expanded(flex: 3, child: MyDrawer()),
           Expanded(
             flex: 7,
-            child: context
-                .read<HomeCubit>()
-                .homePage[context.read<HomeCubit>().state.selectedIndex],
+            child: context.read<HomeCubit>().state.widgetLayout,
           ),
         ],
       ),

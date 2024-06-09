@@ -11,7 +11,7 @@ class AppbarLoginLayoutAuthLogin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
-        backgroundColor: kBackgroundColorGreen,
+        //    backgroundColor: kBackgroundColorGreen,
         title: Text(
           "booky".tr(context),
           style: TextStyle(

@@ -11,7 +11,7 @@ class AppbarRegisterWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
-      backgroundColor: kBackgroundColorGreen,
+      //     backgroundColor: kBackgroundColorGreen,
       foregroundColor: Theme.of(context).colorScheme.surface,
       title: Text(
         "booky".tr(context),

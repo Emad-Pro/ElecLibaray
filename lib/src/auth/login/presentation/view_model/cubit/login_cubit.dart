@@ -12,8 +12,8 @@ class LoginCubit extends Cubit<LoginState> {
   GlobalKey formKey = GlobalKey<FormState>();
   TextEditingController userNameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
-  Color loginActiveButtonColor = kBackgroundColorGreen;
-  Color loginUnActiveButtonColor = Colors.grey;
+//  Color loginActiveButtonColor = kBackgroundColorGreen;
+  // Color loginUnActiveButtonColor = Colors.grey;
   validateUserNameAndPassword() {
     if (userNameController.text.length > 6 &&
         passwordController.text.length > 6) {

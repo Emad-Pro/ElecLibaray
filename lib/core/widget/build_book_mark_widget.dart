@@ -13,7 +13,7 @@ class BuildBookMarkWidget extends StatelessWidget {
         onPressed: onPressed,
         icon: Container(
             decoration: BoxDecoration(
-                color: value ? kBackgroundColorGreen : null,
+                //    color: value ? kBackgroundColorGreen : null,
                 borderRadius: BorderRadius.circular(2)),
             child: const Icon(
               Icons.bookmark_border,

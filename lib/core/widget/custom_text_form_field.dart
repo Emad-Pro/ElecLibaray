@@ -28,7 +28,7 @@ class CustomTextFormFiled extends StatelessWidget {
           child: Text(
             title,
             style: TextStyle(
-                color: kBackgroundColorGreen,
+                //     color: kBackgroundColorGreen,
                 fontSize: getResponsiveFontSize(context, fontSize: 18)),
           ),
         ),
@@ -46,11 +46,13 @@ class CustomTextFormFiled extends StatelessWidget {
                   borderRadius: BorderRadius.circular(16),
                   borderSide: const BorderSide(color: Colors.red)),
               focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(16),
-                  borderSide: const BorderSide(color: kBackgroundColorGreen)),
+                borderRadius: BorderRadius.circular(16),
+                //   borderSide: const BorderSide(color: kBackgroundColorGreen),
+              ),
               enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(16),
-                  borderSide: const BorderSide(color: kBackgroundColorGreen)),
+                borderRadius: BorderRadius.circular(16),
+                // borderSide: const BorderSide(color: kBackgroundColorGreen),
+              ),
             ))
       ],
     );

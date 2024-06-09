@@ -21,7 +21,7 @@ class LoginOrRegisterTabletScreen extends StatelessWidget {
                 Expanded(
                     child: Container(
                         decoration: BoxDecoration(
-                            color: kBackgroundColorGreen,
+                            //  color: kBackgroundColorGreen,
                             borderRadius: BorderRadius.circular(12)),
                         height: double.infinity,
                         child: const LoginOrRegisterImage())),

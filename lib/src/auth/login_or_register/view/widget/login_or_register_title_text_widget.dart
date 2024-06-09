@@ -18,7 +18,7 @@ class LoginOrRegisterTitleText extends StatelessWidget {
         "booky".tr(context),
         style: TextStyle(
             letterSpacing: 2,
-            color: kBackgroundColorGreen,
+            //    color: kBackgroundColorGreen,
             fontSize: getResponsiveFontSize(context, fontSize: 65)),
       ),
     );

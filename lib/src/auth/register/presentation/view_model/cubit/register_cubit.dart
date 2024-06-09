@@ -13,8 +13,8 @@ class RegisterCubit extends Cubit<RegisterState> {
   TextEditingController passwordController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController confirmPasswordController = TextEditingController();
-  Color loginActiveButtonColor = kBackgroundColorGreen;
-  Color loginUnActiveButtonColor = Colors.grey;
+//  Color loginActiveButtonColor = kBackgroundColorGreen;
+  // Color loginUnActiveButtonColor = Colors.grey;
   validateFormRegister() {
     if (formKey.currentState!.validate()) {}
     if (userNameController.text.length > 6 &&

@@ -95,15 +95,17 @@ class BodyRegisterWidget extends StatelessWidget {
                     child: ElevatedButton(
                       onPressed: registerCubit.isActive ? () {} : null,
                       style: ButtonStyle(
-                          elevation: WidgetStateProperty.all<double>(0),
-                          shape: WidgetStateProperty.all<OutlinedBorder>(
-                              RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12),
-                          )),
-                          backgroundColor: WidgetStateProperty.all<Color>(
-                              registerCubit.isActive
-                                  ? registerCubit.loginActiveButtonColor
-                                  : registerCubit.loginUnActiveButtonColor)),
+                        elevation: WidgetStateProperty.all<double>(0),
+                        shape: WidgetStateProperty.all<OutlinedBorder>(
+                            RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        )),
+                        //     backgroundColor: WidgetStateProperty.all<Color>(
+                        //     registerCubit.isActive
+                        //       ? registerCubit.loginActiveButtonColor
+                        //     : registerCubit.loginUnActiveButtonColor,
+                        //),
+                      ),
                       child: Text("Sign up".tr(context)),
                     ),
                   ),

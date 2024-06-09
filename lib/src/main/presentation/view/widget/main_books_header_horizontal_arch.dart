@@ -13,6 +13,7 @@ class HeaderHorizontalArch extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final backgroundColor = Theme.of(context).colorScheme.primary;
     return SizedBox(
       height: 340,
       width: double.infinity,
@@ -22,7 +23,7 @@ class HeaderHorizontalArch extends StatelessWidget {
             height: 50,
             position: ArcPosition.Bottom),
         child: Container(
-          color: kBackgroundColorGreen,
+          color: backgroundColor,
           child: const Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

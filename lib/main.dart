@@ -3,6 +3,7 @@ import 'package:elec_lib_app/core/get_It/service_locator.dart';
 import 'package:elec_lib_app/core/sharedPreferences/cacheHelper.dart';
 import 'package:elec_lib_app/src/home/view_model/cubit/home_cubit.dart';
 import 'package:elec_lib_app/src/settings/view_model/cubit/settings_cubit.dart';
+import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/gestures.dart';
 
 import 'package:flutter/material.dart';
@@ -56,11 +57,13 @@ class MyApp extends StatelessWidget {
                 return supportedLocales.first;
               },
               title: 'Expense Tracker',
-              theme: ThemeService().lightMode(context),
-              darkTheme: ThemeService().darkMode(context),
+              theme: FlexThemeData.light(
+                  scheme: FlexScheme.redM3, useMaterial3: true),
+              darkTheme: FlexThemeData.dark(
+                  scheme: FlexScheme.redM3, useMaterial3: true),
               themeMode:
                   ThemeService.darkModeValue ? ThemeMode.dark : ThemeMode.light,
-              home: HomeLayout());
+              home: const HomeLayout());
         },
       ),
     );

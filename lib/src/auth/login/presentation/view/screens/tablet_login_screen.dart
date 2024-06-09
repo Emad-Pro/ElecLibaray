@@ -25,7 +25,7 @@ class TabletLoginScreen extends StatelessWidget {
                       height: double.infinity,
                       margin: const EdgeInsets.all(5),
                       decoration: BoxDecoration(
-                          color: kBackgroundColorGreen,
+                          //     color: kBackgroundColorGreen,
                           borderRadius: BorderRadius.circular(12)),
                       child:
                           SvgPicture.asset("assets/images/login/login.svg"))),

@@ -14,7 +14,7 @@ class TextTitleGroupBooks extends StatelessWidget {
     return Text(
       "${titleText.tr(context)} ${count != null ? "(${count})" : ""}",
       style: TextStyle(
-          color: kBackgroundColorGreen,
+          //    color: kBackgroundColorGreen,
           fontSize: getResponsiveFontSize(context, fontSize: 22),
           fontWeight: FontWeight.bold),
     );

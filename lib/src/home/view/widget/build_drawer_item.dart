@@ -9,30 +9,35 @@ import '../../data/model/drawer_model.dart';
 class BuildDrawerItem extends StatelessWidget {
   final DrawerModel drawerModel;
   final int index;
-  const BuildDrawerItem(
-      {super.key, required this.index, required this.drawerModel});
+
+  const BuildDrawerItem({
+    super.key,
+    required this.index,
+    required this.drawerModel,
+  });
 
   @override
   Widget build(BuildContext context) {
     final isSelected = context.read<HomeCubit>().state.selectedIndex == index;
+    final color = Theme.of(context).colorScheme;
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(6),
-          color: isSelected ? kBackgroundColorGreen : Colors.transparent),
+          color: isSelected ? color.primary : color.inversePrimary),
       child: ListTile(
           onTap: () {
-            context.read<HomeCubit>().changeSelectedPageDrawer(index);
+            context.read<HomeCubit>().changeSelectedPageDrawer(index: index);
           },
           leading: Icon(
             drawerModel.icon,
-            color: isSelected ? Colors.black : Colors.grey,
+            color: isSelected ? color.surface : color.onPrimary,
           ),
           title: Text(
             drawerModel.title.tr(context),
             style: TextStyle(
                 fontSize: 14,
-                color: isSelected ? Colors.black : Colors.grey,
+                color: isSelected ? color.surface : color.onPrimary,
                 fontWeight: FontWeight.normal),
           )),
     );

@@ -14,10 +14,14 @@ class LoginOrRegisterButtonSignUp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ButtonStyle(
-          elevation: WidgetStateProperty.all<double>(0),
-          shape: WidgetStateProperty.all<OutlinedBorder>(RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(25),
-              side: const BorderSide(color: kBackgroundColorGreen)))),
+        elevation: WidgetStateProperty.all<double>(0),
+        shape: WidgetStateProperty.all<OutlinedBorder>(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(25),
+            //   side: const BorderSide(color: kBackgroundColorGreen),
+          ),
+        ),
+      ),
       onPressed: () {
         Navigator.push(context,
             MaterialPageRoute(builder: (context) => const RegisterLayout()));
@@ -26,7 +30,7 @@ class LoginOrRegisterButtonSignUp extends StatelessWidget {
         "Sign up".tr(context),
         style: TextStyle(
             fontWeight: FontWeight.w400,
-            color: kBackgroundColorGreen,
+            //    color: kBackgroundColorGreen,
             fontSize: getResponsiveFontSize(context, fontSize: 18)),
       ),
     );

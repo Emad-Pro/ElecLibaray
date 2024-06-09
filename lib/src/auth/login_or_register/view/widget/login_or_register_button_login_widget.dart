@@ -15,7 +15,7 @@ class LoginOrRegisterButtonLogin extends StatelessWidget {
     return ElevatedButton(
       style: ButtonStyle(
         elevation: WidgetStateProperty.all<double>(0),
-        backgroundColor: WidgetStateProperty.all<Color>(kBackgroundColorGreen),
+        //   backgroundColor: WidgetStateProperty.all<Color>(kBackgroundColorGreen),
       ),
       onPressed: () {
         Navigator.push(context,

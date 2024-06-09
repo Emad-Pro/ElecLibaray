@@ -15,7 +15,7 @@ class SplashTextWidget extends StatelessWidget {
       "Booky".tr(context),
       style: TextStyle(
         fontWeight: FontWeight.bold,
-        color: kBackgroundColorGreen,
+        //    color: kBackgroundColorGreen,
         fontStyle: FontStyle.italic,
         fontSize: getResponsiveFontSize(context, fontSize: 85),
       ),

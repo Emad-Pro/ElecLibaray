@@ -18,23 +18,15 @@ class MyAppbar extends StatelessWidget implements PreferredSizeWidget {
       builder: (context, state) {
         return Container(
           padding: const EdgeInsets.all(5),
-          color: kBackgroundColorGreen,
+          color: Theme.of(context).colorScheme.primary,
           child: Row(
             children: [
-              IconButton(
-                onPressed: () {
-                  Scaffold.of(context).openDrawer();
-                },
-                icon: Icon(
-                  Icons.menu,
-                  color: color,
-                ),
-                color: color,
-              ),
               if (state.selectedIndex != 0)
                 IconButton(
                     onPressed: () {
-                      context.read<HomeCubit>().changeSelectedPageDrawer(0);
+                      context
+                          .read<HomeCubit>()
+                          .changeSelectedPageDrawer(index: state.selectedIndex);
                     },
                     icon: Icon(
                       Icons.arrow_back_ios,

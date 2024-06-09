@@ -6,7 +6,7 @@ import '../sharedPreferences/cacheHelper.dart';
 
 class ThemeService {
   ThemeData lightMode(context) => ThemeData(
-        useMaterial3: true,
+        useMaterial3: false,
         fontFamily:
             BlocProvider.of<SettingsCubit>(context).locale!.languageCode == "en"
                 ? "Rubic"
@@ -21,7 +21,7 @@ class ThemeService {
       );
 
   ThemeData darkMode(context) => ThemeData(
-        useMaterial3: true,
+        useMaterial3: false,
         brightness: Brightness.dark,
         fontFamily:
             BlocProvider.of<SettingsCubit>(context).locale!.languageCode == "en"

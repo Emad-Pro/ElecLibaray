@@ -21,7 +21,7 @@ class MainBooksBuildCategoryListViewItem extends StatelessWidget {
         Text(
           nameCategory,
           style: TextStyle(
-              color: Colors.white,
+              //   color: Colors.white,
               fontWeight: FontWeight.w500,
               fontSize: getResponsiveFontSize(context, fontSize: 20)),
         )
