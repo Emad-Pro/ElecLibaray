@@ -14,7 +14,6 @@ class ResponsiveLayout extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) {
         if (constraints.maxWidth < 550) {
-          print(constraints);
           return mobileScaffold(context);
         } else {
           return tabletScaffold(context);
@@ -22,4 +21,16 @@ class ResponsiveLayout extends StatelessWidget {
       },
     );
   }
+}
+
+class ResponsiveDevices {
+  static bool isMobile(BuildContext context) =>
+      MediaQuery.of(context).size.width < 550;
+
+  static bool isTablet(BuildContext context) =>
+      MediaQuery.of(context).size.width < 1100 &&
+      MediaQuery.of(context).size.width >= 550;
+
+  static bool isDesktop(BuildContext context) =>
+      MediaQuery.of(context).size.width >= 1100;
 }

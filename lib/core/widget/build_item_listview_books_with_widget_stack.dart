@@ -1,9 +1,7 @@
-import 'package:elec_lib_app/src/book_details/book_details_layout.dart';
+import 'package:elec_lib_app/src/book_details/presentation/view/book_details_layout.dart';
 import 'package:elec_lib_app/src/home/view_model/cubit/home_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../theme/colors.dart';
 import 'build_book_mark_widget.dart';
 import 'build_item_listview_books.dart';
 
@@ -16,10 +14,10 @@ class BuildItemListViewBooksWithWidgetStack extends StatelessWidget {
     return InkWell(
       onTap: () {
         BlocProvider.of<HomeCubit>(context)
-            .changeSelectedPageDrawer(widgetLayout: BookDetailsLayout());
+            .changeSelectedPageDrawer(widgetLayout: const BookDetailsLayout());
       },
       child: SizedBox(
-        height: 130,
+        height: 210,
         width: 120,
         child: Stack(
           children: [

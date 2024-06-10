@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../theme/colors.dart';
-
 class BuildBookMarkWidget extends StatelessWidget {
   const BuildBookMarkWidget(
       {super.key, required this.onPressed, required this.value});

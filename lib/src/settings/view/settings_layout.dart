@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'widget/settings_language.dart';
+import 'widget/settings_profile.dart';
 import 'widget/settings_theme_mode.dart';
 
 class SettingsLayout extends StatelessWidget {
@@ -13,6 +14,7 @@ class SettingsLayout extends StatelessWidget {
       padding: const EdgeInsets.all(10),
       child: ListView(
         children: const [
+          SettingsProfile(),
           SettingsThemeMode(),
           SettingsLanguage(),
         ],

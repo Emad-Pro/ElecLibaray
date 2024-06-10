@@ -5,11 +5,9 @@ import 'package:elec_lib_app/src/home/view_model/cubit/home_cubit.dart';
 import 'package:elec_lib_app/src/settings/view_model/cubit/settings_cubit.dart';
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/gestures.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-
 import 'core/theme/theme.dart';
 import 'src/home/home_layout.dart';
 
@@ -17,6 +15,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await CacheHelper.init();
   ServiceLocator().init();
+
   await ThemeService.themeInit();
   runApp(const MyApp());
 }

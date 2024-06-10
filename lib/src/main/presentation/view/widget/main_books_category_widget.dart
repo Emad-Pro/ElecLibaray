@@ -20,19 +20,20 @@ class MainBooksCategoryWidget extends StatelessWidget {
             titleText: 'Categories',
           ),
           GridView.builder(
-              gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                  maxCrossAxisExtent: 200),
-              shrinkWrap: true,
-              itemCount: 6,
-              itemBuilder: (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.all(5.0),
-                  child: MainBooksBuildCategoryListViewItem(
-                    imagePath: categoryList[index],
-                    nameCategory: categoryText[index],
-                  ),
-                );
-              })
+            gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                maxCrossAxisExtent: 200),
+            shrinkWrap: true,
+            itemCount: 6,
+            itemBuilder: (context, index) {
+              return Padding(
+                padding: const EdgeInsets.all(5.0),
+                child: MainBooksBuildCategoryListViewItem(
+                  imagePath: categoryList[index],
+                  nameCategory: categoryText[index],
+                ),
+              );
+            },
+          )
         ],
       ),
     );
