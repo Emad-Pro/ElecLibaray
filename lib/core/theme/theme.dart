@@ -1,8 +1,9 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../src/settings/view_model/cubit/settings_cubit.dart';
-import '../sharedPreferences/cacheHelper.dart';
+import '../sharedPreferences/cahce_helper.dart';
 
 class ThemeService {
   ThemeData lightMode(context) => ThemeData(
@@ -43,7 +44,9 @@ class ThemeService {
   }
 
   static Future changeDarkMode() async {
-    print(darkModeValue);
+    if (kDebugMode) {
+      print(darkModeValue);
+    }
     darkModeValue = !darkModeValue;
 
     await CacheHelper.saveData(key: "darkMode", value: darkModeValue);

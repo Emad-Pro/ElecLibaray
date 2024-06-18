@@ -1,9 +1,9 @@
 import 'package:elec_lib_app/core/shape_packge/shape.dart';
 import 'package:flutter/material.dart';
 
-enum ArcPosition { Bottom, Top, Left, Right }
+enum ArcPosition { bottom, top, left, right }
 
-enum ArcDirection { Outside, Inside }
+enum ArcDirection { outside, inside }
 
 class ArcShape extends Shape {
   final ArcPosition position;
@@ -11,8 +11,8 @@ class ArcShape extends Shape {
   final ArcDirection direction;
 
   ArcShape({
-    this.position = ArcPosition.Bottom,
-    this.direction = ArcDirection.Outside,
+    this.position = ArcPosition.bottom,
+    this.direction = ArcDirection.outside,
     this.height = 10,
   });
 
@@ -23,9 +23,9 @@ class ArcShape extends Shape {
 
   Path generatePath(Rect rect, double? scale) {
     final size = rect.size;
-    switch (this.position) {
-      case ArcPosition.Top:
-        if (direction == ArcDirection.Outside) {
+    switch (position) {
+      case ArcPosition.top:
+        if (direction == ArcDirection.outside) {
           return Path()
             ..moveTo(0.0, height)
             ..quadraticBezierTo(size.width / 4, 0.0, size.width / 2, 0.0)
@@ -41,8 +41,8 @@ class ArcShape extends Shape {
             ..lineTo(0.0, size.height)
             ..close();
         }
-      case ArcPosition.Bottom:
-        if (direction == ArcDirection.Outside) {
+      case ArcPosition.bottom:
+        if (direction == ArcDirection.outside) {
           return Path()
             ..lineTo(0.0, size.height - height)
             ..quadraticBezierTo(
@@ -62,8 +62,8 @@ class ArcShape extends Shape {
             ..lineTo(0.0, 0.0)
             ..close();
         }
-      case ArcPosition.Left:
-        if (direction == ArcDirection.Outside) {
+      case ArcPosition.left:
+        if (direction == ArcDirection.outside) {
           return Path()
             ..moveTo(height, 0.0)
             ..quadraticBezierTo(0.0, size.height / 4, 0.0, size.height / 2)
@@ -81,7 +81,7 @@ class ArcShape extends Shape {
             ..close();
         }
       default: //right
-        if (direction == ArcDirection.Outside) {
+        if (direction == ArcDirection.outside) {
           return Path()
             ..moveTo(size.width - height, 0.0)
             ..quadraticBezierTo(

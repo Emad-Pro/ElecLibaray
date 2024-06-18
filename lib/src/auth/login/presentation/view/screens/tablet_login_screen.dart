@@ -1,4 +1,3 @@
-import 'package:elec_lib_app/core/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -25,7 +24,7 @@ class TabletLoginScreen extends StatelessWidget {
                       height: double.infinity,
                       margin: const EdgeInsets.all(5),
                       decoration: BoxDecoration(
-                          //     color: kBackgroundColorGreen,
+                          color: Theme.of(context).colorScheme.primary,
                           borderRadius: BorderRadius.circular(12)),
                       child:
                           SvgPicture.asset("assets/images/login/login.svg"))),

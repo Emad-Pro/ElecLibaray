@@ -16,9 +16,9 @@ class CategoryDetailsHeaderArch extends StatelessWidget {
       children: [
         ShapeOfView(
           shape: ArcShape(
-              direction: ArcDirection.Outside,
+              direction: ArcDirection.outside,
               height: 60,
-              position: ArcPosition.Bottom),
+              position: ArcPosition.bottom),
           child: Container(
             width: double.infinity,
             height: 280,

@@ -12,6 +12,8 @@ class MyDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      elevation: 1,
+      backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       child: BlocBuilder<HomeCubit, HomeState>(
         builder: (context, state) {
           return Column(

@@ -37,5 +37,12 @@
     "Category": "Category",
     "Authors": "Authors",
     "Reports": "Reports",
-    "You can see your profile details": "You can see your profile details"
+    "You can see your profile details": "You can see your profile details",
+    "loading...": "loading...",
+    "already exists an account with the given email address.": "already exists an account with the given email address.",
+    "email address is not valid.": "email address is not valid",
+    "password is not strong enough.": "password is not strong enough",
+    "email/password accounts are not enabled. Enable email/password accounts in the Firebase Console, under the Auth tab.": "email/password accounts are not enabled. Enable email/password accounts in the Firebase Console, under the Auth tab.",
+    "An unexpected error occurred.": "An unexpected error occurred",
+    "Sign Up is Success": "Sign Up is Success"
 }

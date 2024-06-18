@@ -14,8 +14,8 @@ class HomeLayout extends StatelessWidget {
     return BlocBuilder<HomeCubit, HomeState>(
       builder: (context, state) {
         return ResponsiveLayout(
-            mobileScaffold: (context) => HomeMobileScreens(),
-            tabletScaffold: (context) => HomeTabletScreens());
+            mobileScaffold: (context) => const HomeMobileScreens(),
+            tabletScaffold: (context) => const HomeTabletScreens());
       },
     );
   }

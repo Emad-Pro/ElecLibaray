@@ -4,14 +4,14 @@ import 'package:elec_lib_app/src/cateogry/presentaion/view/screens/category_tabl
 import 'package:flutter/material.dart';
 
 class CategoryLayout extends StatelessWidget {
-  const CategoryLayout({Key? key}) : super(key: key);
+  const CategoryLayout({super.key});
 
   @override
   Widget build(BuildContext context) {
     if (ResponsiveDevices.isMobile(context)) {
-      return CategoryMobileScreen();
+      return const CategoryMobileScreen();
     } else {
-      return CategoryTabletScreen();
+      return const CategoryTabletScreen();
     }
   }
 }

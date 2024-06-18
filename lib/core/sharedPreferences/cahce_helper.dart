@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:shared_preferences/shared_preferences.dart';
 
 class CacheHelper {
@@ -32,14 +30,6 @@ class CacheHelper {
 
   static Future clearData({required String key}) async {
     await sharedPreferences!.remove(key);
-  }
-
-  static Future read(String key) async {
-    return await json.decode(sharedPreferences!.getString(key)!);
-  }
-
-  static Future save(String key, value) async {
-    sharedPreferences!.setString(key, json.encode(value));
   }
 
   static Future remove(String key) async {

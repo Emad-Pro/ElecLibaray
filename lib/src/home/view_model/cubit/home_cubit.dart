@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:elec_lib_app/core/AppLocalizations/app_localizations.dart';
-import 'package:elec_lib_app/src/category_details/presentation/view/category_details_layout.dart';
+import 'package:elec_lib_app/src/author/presentation/view/authors_layout.dart';
 import 'package:elec_lib_app/src/home/data/model/drawer_model.dart';
 import 'package:elec_lib_app/src/main/presentation/view/main_books_layout.dart';
 import 'package:elec_lib_app/src/settings/view/settings_layout.dart';
@@ -12,7 +12,7 @@ import '../../../cateogry/presentaion/view/category_layout.dart';
 part 'home_state.dart';
 
 class HomeCubit extends Cubit<HomeState> {
-  HomeCubit() : super(HomeState());
+  HomeCubit() : super(const HomeState());
   List<DrawerModel> drawerPage = [
     DrawerModel(icon: Icons.home, title: "Home"),
     DrawerModel(icon: Icons.category, title: "Category"),
@@ -21,7 +21,7 @@ class HomeCubit extends Cubit<HomeState> {
     DrawerModel(icon: Icons.settings, title: "Settings"),
   ];
   List<BottomNavigationBarItem> itemsBottomNavigationBar(context) {
-    final backgroundColor = Theme.of(context).colorScheme.primary;
+    final backgroundColor = Theme.of(context).colorScheme.inversePrimary;
     return [
       BottomNavigationBarItem(
           icon: const Icon(Icons.home),
@@ -53,7 +53,7 @@ class HomeCubit extends Cubit<HomeState> {
   List<Widget> homePage = [
     const MainBooksLayout(),
     const CategoryLayout(),
-    const Text("Authors"),
+    const AuthorsLayout(),
     const Text("Reports"),
     const SettingsLayout(),
   ];

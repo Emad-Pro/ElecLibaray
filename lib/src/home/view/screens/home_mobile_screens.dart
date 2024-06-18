@@ -12,6 +12,10 @@ class HomeMobileScreens extends StatelessWidget {
     return Scaffold(
       appBar: const MyAppbar(),
       bottomNavigationBar: BottomNavigationBar(
+          unselectedItemColor: Theme.of(context).colorScheme.primary,
+          selectedItemColor: Theme.of(context).colorScheme.onPrimary,
+          selectedLabelStyle:
+              TextStyle(color: Theme.of(context).colorScheme.primary),
           currentIndex: context.read<HomeCubit>().state.selectedIndex,
           onTap: (index) {
             context.read<HomeCubit>().changeSelectedPageDrawer(index: index);

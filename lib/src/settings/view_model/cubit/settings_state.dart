@@ -18,6 +18,5 @@ class ChangeLocaleState extends SettingsState {
   final Locale locale;
 
   const ChangeLocaleState({required this.locale});
-  @override
   List<Object?> get props => [locale];
 }

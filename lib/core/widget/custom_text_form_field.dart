@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../responsive_layout/app_styles.dart';
-import '../theme/colors.dart';
 
 class CustomTextFormFiled extends StatelessWidget {
   final String title;
@@ -28,7 +27,7 @@ class CustomTextFormFiled extends StatelessWidget {
           child: Text(
             title,
             style: TextStyle(
-                //     color: kBackgroundColorGreen,
+                color: Theme.of(context).colorScheme.primary,
                 fontSize: getResponsiveFontSize(context, fontSize: 18)),
           ),
         ),
@@ -47,11 +46,13 @@ class CustomTextFormFiled extends StatelessWidget {
                   borderSide: const BorderSide(color: Colors.red)),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(16),
-                //   borderSide: const BorderSide(color: kBackgroundColorGreen),
+                borderSide:
+                    BorderSide(color: Theme.of(context).colorScheme.primary),
               ),
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(16),
-                // borderSide: const BorderSide(color: kBackgroundColorGreen),
+                borderSide:
+                    BorderSide(color: Theme.of(context).colorScheme.primary),
               ),
             ))
       ],

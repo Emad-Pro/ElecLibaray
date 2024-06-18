@@ -1,5 +1,4 @@
 import 'package:elec_lib_app/core/AppLocalizations/app_localizations.dart';
-import 'package:elec_lib_app/core/theme/colors.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/responsive_layout/app_styles.dart';

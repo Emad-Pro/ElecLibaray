@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/widget/build_item_listview_books_with_widget_stack.dart';
 import '../../../../../core/widget/text_title_group_books.dart';
-import 'main_books_my_books_widget.dart';
 
 class MainBooksMyWashlistWidget extends StatelessWidget {
   const MainBooksMyWashlistWidget({

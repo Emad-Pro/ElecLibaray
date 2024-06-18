@@ -1,9 +1,7 @@
 import 'package:bloc/bloc.dart';
-import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/AppLocalizations/app_localizations.dart';
-import '../../../../core/sharedPreferences/cacheHelper.dart';
 import '../../../../core/theme/theme.dart';
 
 part 'settings_state.dart';

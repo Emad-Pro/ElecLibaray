@@ -2,7 +2,6 @@ import 'package:elec_lib_app/core/AppLocalizations/app_localizations.dart';
 import 'package:flutter/material.dart';
 
 import '../responsive_layout/app_styles.dart';
-import '../theme/colors.dart';
 
 class TextTitleGroupBooks extends StatelessWidget {
   const TextTitleGroupBooks(
@@ -12,7 +11,7 @@ class TextTitleGroupBooks extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      "${titleText.tr(context)} ${count != null ? "(${count})" : ""}",
+      "${titleText.tr(context)} ${count != null ? "($count)" : ""}",
       style: TextStyle(
           //    color: kBackgroundColorGreen,
           fontSize: getResponsiveFontSize(context, fontSize: 22),

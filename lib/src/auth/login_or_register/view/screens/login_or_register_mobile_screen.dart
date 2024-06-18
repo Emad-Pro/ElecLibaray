@@ -13,13 +13,13 @@ class LoginOrRegisterMobileScreen extends StatelessWidget {
     return const Scaffold(
       body: CustomScrollView(
         slivers: [
+          SliverToBoxAdapter(
+            child: LoginOrRegisterActions(),
+          ),
           SliverFillRemaining(
-              child: Column(
-            children: [
-              LoginOrRegisterActions(),
-              LoginOrRegisterImage(),
-            ],
-          )),
+              fillOverscroll: true,
+              hasScrollBody: false,
+              child: LoginOrRegisterImage()),
         ],
       ),
     );

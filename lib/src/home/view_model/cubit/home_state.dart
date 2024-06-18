@@ -1,7 +1,7 @@
 part of 'home_cubit.dart';
 
 class HomeState extends Equatable {
-  HomeState(
+  const HomeState(
       {this.selectedIndex = 0, this.widgetLayout = const MainBooksLayout()});
   final int selectedIndex;
   final Widget widgetLayout;

@@ -3,7 +3,6 @@ import 'package:elec_lib_app/src/home/view_model/cubit/home_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../core/theme/colors.dart';
 import '../../data/model/drawer_model.dart';
 
 class BuildDrawerItem extends StatelessWidget {
@@ -41,6 +40,5 @@ class BuildDrawerItem extends StatelessWidget {
                 fontWeight: FontWeight.normal),
           )),
     );
-    ;
   }
 }

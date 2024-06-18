@@ -26,6 +26,5 @@ class MainBooksTabletScreen extends StatelessWidget {
         )
       ],
     );
-    ;
   }
 }

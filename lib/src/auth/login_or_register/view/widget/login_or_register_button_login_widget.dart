@@ -2,7 +2,6 @@ import 'package:elec_lib_app/core/AppLocalizations/app_localizations.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/responsive_layout/app_styles.dart';
-import '../../../../../core/theme/colors.dart';
 import '../../../login/presentation/view/login_layout.dart';
 
 class LoginOrRegisterButtonLogin extends StatelessWidget {
@@ -15,7 +14,8 @@ class LoginOrRegisterButtonLogin extends StatelessWidget {
     return ElevatedButton(
       style: ButtonStyle(
         elevation: WidgetStateProperty.all<double>(0),
-        //   backgroundColor: WidgetStateProperty.all<Color>(kBackgroundColorGreen),
+        backgroundColor: WidgetStateProperty.all<Color>(
+            Theme.of(context).colorScheme.primary),
       ),
       onPressed: () {
         Navigator.push(context,
@@ -25,7 +25,8 @@ class LoginOrRegisterButtonLogin extends StatelessWidget {
         "Log in".tr(context),
         style: TextStyle(
             fontWeight: FontWeight.w400,
-            fontSize: getResponsiveFontSize(context, fontSize: 18)),
+            fontSize: getResponsiveFontSize(context, fontSize: 18),
+            color: Theme.of(context).colorScheme.onPrimary),
       ),
     );
   }

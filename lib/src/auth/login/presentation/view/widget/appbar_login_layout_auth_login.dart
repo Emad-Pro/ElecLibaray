@@ -1,7 +1,6 @@
 import 'package:elec_lib_app/core/AppLocalizations/app_localizations.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../../core/theme/colors.dart';
 
 class AppbarLoginLayoutAuthLogin extends StatelessWidget {
   const AppbarLoginLayoutAuthLogin({
@@ -11,11 +10,11 @@ class AppbarLoginLayoutAuthLogin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
-        //    backgroundColor: kBackgroundColorGreen,
+        backgroundColor: Theme.of(context).colorScheme.primary,
         title: Text(
           "booky".tr(context),
           style: TextStyle(
-            color: Theme.of(context).colorScheme.primary,
+            color: Theme.of(context).colorScheme.onPrimary,
           ),
         ),
         centerTitle: true,
@@ -25,7 +24,7 @@ class AppbarLoginLayoutAuthLogin extends StatelessWidget {
           },
           icon: Icon(
             Icons.arrow_back_ios,
-            color: Theme.of(context).colorScheme.primary,
+            color: Theme.of(context).colorScheme.onPrimary,
           ),
         ));
   }

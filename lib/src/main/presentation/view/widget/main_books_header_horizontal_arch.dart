@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/shape_packge/arc.dart';
 import '../../../../../core/shape_packge/shape.dart';
-import '../../../../../core/theme/colors.dart';
 import 'main_books_listview_header_horizontal_arch.dart';
 import 'main_books_text_recently_add_widget.dart';
 
@@ -19,9 +18,9 @@ class HeaderHorizontalArch extends StatelessWidget {
       width: double.infinity,
       child: ShapeOfView(
         shape: ArcShape(
-            direction: ArcDirection.Outside,
+            direction: ArcDirection.outside,
             height: 50,
-            position: ArcPosition.Bottom),
+            position: ArcPosition.bottom),
         child: Container(
           color: backgroundColor,
           child: const Column(

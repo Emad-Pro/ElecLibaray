@@ -1,8 +1,5 @@
-import 'package:elec_lib_app/core/AppLocalizations/app_localizations.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../core/responsive_layout/app_styles.dart';
-import '../../../../../core/theme/colors.dart';
 import '../../../../../core/widget/build_item_listview_books_with_widget_stack.dart';
 import '../../../../../core/widget/text_title_group_books.dart';
 

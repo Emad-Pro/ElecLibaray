@@ -11,11 +11,11 @@ abstract mixin class BorderShape {
 class ShapeOfViewBorder extends ShapeBorder {
   final Shape shape;
 
-  ShapeOfViewBorder({required this.shape});
+  const ShapeOfViewBorder({required this.shape});
 
   @override
   EdgeInsetsGeometry get dimensions {
-    return EdgeInsets.all(0);
+    return const EdgeInsets.all(0);
   }
 
   @override
@@ -77,26 +77,26 @@ class ShapeOfView extends StatelessWidget {
   final double? height;
   final double? width;
 
-  ShapeOfView({
-    Key? key,
+  const ShapeOfView({
+    super.key,
     this.child,
     this.elevation = 4,
     this.shape,
     this.clipBehavior = Clip.antiAlias,
     this.width,
     this.height,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
     return Material(
-      shape: ShapeOfViewBorder(shape: this.shape!),
-      clipBehavior: this.clipBehavior,
-      elevation: this.elevation,
-      child: Container(
-        height: this.height,
-        width: this.width,
-        child: this.child,
+      shape: ShapeOfViewBorder(shape: shape!),
+      clipBehavior: clipBehavior,
+      elevation: elevation,
+      child: SizedBox(
+        height: height,
+        width: width,
+        child: child,
       ),
     );
   }

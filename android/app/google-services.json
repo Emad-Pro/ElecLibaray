@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "413618433373",
+    "firebase_url": "https://elecapp-f2736-default-rtdb.firebaseio.com",
+    "project_id": "elecapp-f2736",
+    "storage_bucket": "elecapp-f2736.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:413618433373:android:d57717dbf651dd698e8cb4",
+        "android_client_info": {
+          "package_name": "com.example.elec_lib_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXay9hGNQRBu2WkrIx-AhwR-nlzxHzBZg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

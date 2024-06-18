@@ -20,19 +20,17 @@ class ButtonAuthLogin extends StatelessWidget {
       child: ElevatedButton(
         onPressed: loginCubit.isActive ? () {} : null,
         style: ButtonStyle(
-          elevation: WidgetStateProperty.all<double>(0),
-          shape: WidgetStateProperty.all<OutlinedBorder>(RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
-          )),
-          //  backgroundColor: WidgetStateProperty.all<Color>(
-          //loginCubit.isActive
-          //   ? loginCubit.loginActiveButtonColor
-          //: loginCubit.loginUnActiveButtonColor
-          // )
-        ),
+            elevation: WidgetStateProperty.all<double>(0),
+            shape:
+                WidgetStateProperty.all<OutlinedBorder>(RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12),
+            )),
+            backgroundColor: WidgetStateProperty.all<Color>(loginCubit.isActive
+                ? Theme.of(context).colorScheme.primary
+                : Theme.of(context).colorScheme.onPrimary)),
         child: Text(
           "Log in".tr(context),
-          style: TextStyle(color: Theme.of(context).colorScheme.surface),
+          style: TextStyle(color: Theme.of(context).colorScheme.inversePrimary),
         ),
       ),
     );

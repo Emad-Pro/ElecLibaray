@@ -15,7 +15,7 @@ class CategoryDetailsMobileGridView extends StatelessWidget {
       height: 750,
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: SingleChildScrollView(
-        physics: NeverScrollableScrollPhysics(),
+        physics: const NeverScrollableScrollPhysics(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

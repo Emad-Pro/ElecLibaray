@@ -1,22 +1,31 @@
 import 'package:elec_lib_app/core/AppLocalizations/app_localizations.dart';
 import 'package:elec_lib_app/core/get_It/service_locator.dart';
-import 'package:elec_lib_app/core/sharedPreferences/cacheHelper.dart';
+import 'package:elec_lib_app/core/sharedPreferences/cahce_helper.dart';
 import 'package:elec_lib_app/src/home/view_model/cubit/home_cubit.dart';
 import 'package:elec_lib_app/src/settings/view_model/cubit/settings_cubit.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'core/theme/theme.dart';
-import 'src/home/home_layout.dart';
+import 'src/auth/login_or_register/view/login_or_signup_layout.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await CacheHelper.init();
+  await Firebase.initializeApp(
+    options: const FirebaseOptions(
+        apiKey: "AIzaSyDXay9hGNQRBu2WkrIx-AhwR-nlzxHzBZg",
+        projectId: "elecapp-f2736",
+        messagingSenderId: "413618433373",
+        appId: "1:413618433373:android:d57717dbf651dd698e8cb4"),
+  );
   ServiceLocator().init();
 
-  await ThemeService.themeInit();
+  // await ThemeService.themeInit();
   runApp(const MyApp());
 }
 
@@ -37,6 +46,7 @@ class MyApp extends StatelessWidget {
       child: BlocBuilder<SettingsCubit, SettingsState>(
         builder: (context, state) {
           return MaterialApp(
+              builder: EasyLoading.init(),
               scrollBehavior: MyCustomScrollBehavior(),
               locale: BlocProvider.of<SettingsCubit>(context).locale,
               supportedLocales: const [Locale('en'), Locale('ar')],
@@ -57,12 +67,12 @@ class MyApp extends StatelessWidget {
               },
               title: 'Expense Tracker',
               theme: FlexThemeData.light(
-                  scheme: FlexScheme.redM3, useMaterial3: true),
+                  scheme: FlexScheme.espresso, useMaterial3: true),
               darkTheme: FlexThemeData.dark(
-                  scheme: FlexScheme.redM3, useMaterial3: true),
+                  scheme: FlexScheme.espresso, useMaterial3: true),
               themeMode:
                   ThemeService.darkModeValue ? ThemeMode.dark : ThemeMode.light,
-              home: const HomeLayout());
+              home: const LoginOrRegisterLayout());
         },
       ),
     );

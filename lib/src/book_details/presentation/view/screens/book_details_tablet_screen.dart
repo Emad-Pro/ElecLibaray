@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 import '../../../../../core/responsive_layout/app_styles.dart';
-import '../../../../../core/widget/build_item_listview_books.dart';
 import 'book_details_mobile_screen.dart';
 
 class BookDetailsTabletScreen extends StatelessWidget {
@@ -113,7 +112,7 @@ class BookDetailsTabletScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                Text(
+                const Text(
                   randomText,
                   textAlign: TextAlign.justify,
                 )

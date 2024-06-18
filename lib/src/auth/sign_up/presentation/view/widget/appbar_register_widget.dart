@@ -1,7 +1,6 @@
 import 'package:elec_lib_app/core/AppLocalizations/app_localizations.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../../core/theme/colors.dart';
 
 class AppbarRegisterWidget extends StatelessWidget {
   const AppbarRegisterWidget({
@@ -11,7 +10,7 @@ class AppbarRegisterWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
-      //     backgroundColor: kBackgroundColorGreen,
+      backgroundColor: Theme.of(context).colorScheme.primary,
       foregroundColor: Theme.of(context).colorScheme.surface,
       title: Text(
         "booky".tr(context),

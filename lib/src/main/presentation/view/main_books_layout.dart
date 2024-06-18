@@ -8,9 +8,9 @@ class MainBooksLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (ResponsiveDevices.isDesktop(context)) {
-      return MainBooksTabletScreen();
+      return const MainBooksTabletScreen();
     } else {
-      return MainBooksTabletScreen();
+      return const MainBooksTabletScreen();
     }
   }
 }

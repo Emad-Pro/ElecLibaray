@@ -2,8 +2,7 @@ import 'package:elec_lib_app/core/AppLocalizations/app_localizations.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/responsive_layout/app_styles.dart';
-import '../../../../../core/theme/colors.dart';
-import '../../../register/presentation/view/register_screen.dart';
+import '../../../sign_up/presentation/view/register_screen.dart';
 
 class LoginOrRegisterButtonSignUp extends StatelessWidget {
   const LoginOrRegisterButtonSignUp({
@@ -18,7 +17,7 @@ class LoginOrRegisterButtonSignUp extends StatelessWidget {
         shape: WidgetStateProperty.all<OutlinedBorder>(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(25),
-            //   side: const BorderSide(color: kBackgroundColorGreen),
+            side: BorderSide(color: Theme.of(context).colorScheme.primary),
           ),
         ),
       ),
@@ -29,9 +28,10 @@ class LoginOrRegisterButtonSignUp extends StatelessWidget {
       child: Text(
         "Sign up".tr(context),
         style: TextStyle(
-            fontWeight: FontWeight.w400,
+            fontWeight: FontWeight.bold,
             //    color: kBackgroundColorGreen,
-            fontSize: getResponsiveFontSize(context, fontSize: 18)),
+            fontSize: getResponsiveFontSize(context, fontSize: 18),
+            color: Theme.of(context).colorScheme.primary),
       ),
     );
   }

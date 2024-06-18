@@ -1,4 +1,4 @@
-import 'package:elec_lib_app/src/auth/register/presentation/view/widget/appbar_register_widget.dart';
+import 'package:elec_lib_app/src/auth/sign_up/presentation/view/widget/appbar_register_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 

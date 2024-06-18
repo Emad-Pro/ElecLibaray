@@ -1,6 +1,9 @@
 import 'package:elec_lib_app/core/AppLocalizations/app_localizations.dart';
+import 'package:elec_lib_app/core/enum/state.dart';
+import 'package:elec_lib_app/core/get_It/service_locator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 import '../../../../../../core/widget/custom_text_form_field.dart';
 import '../../view_model/cubit/register_cubit.dart';
@@ -13,19 +16,39 @@ class BodyRegisterWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => RegisterCubit(),
-      child: BlocBuilder<RegisterCubit, RegisterState>(
+      create: (context) => SignUpCubit(getIt()),
+      child: BlocConsumer<SignUpCubit, SignUpState>(
+        listener: (context, state) {
+          if (state.signUpNewUserState == AuthRequestState.erorr) {
+            EasyLoading.dismiss();
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                backgroundColor: Colors.red,
+                content: Text(state.signUpNewUserMessage.tr(context)),
+              ),
+            );
+          } else if (state.signUpNewUserState == AuthRequestState.loading) {
+            EasyLoading.show(
+                status: 'loading...'.tr(context),
+                maskType: EasyLoadingMaskType.black);
+          } else if (state.signUpNewUserState == AuthRequestState.success) {
+            EasyLoading.dismiss();
+            EasyLoading.showSuccess(
+              state.signUpNewUserMessage,
+            );
+          }
+        },
         builder: (context, state) {
-          final registerCubit = context.watch<RegisterCubit>();
+          final signUpCubit = context.watch<SignUpCubit>();
           return Padding(
             padding: const EdgeInsets.all(15.0),
             child: Form(
-              key: registerCubit.formKey,
+              key: signUpCubit.formKey,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   CustomTextFormFiled(
-                      controller: registerCubit.emailController,
+                      controller: signUpCubit.emailController,
                       title: "Email".tr(context),
                       validator: (value) {
                         if (value!.isEmpty) {
@@ -36,11 +59,11 @@ class BodyRegisterWidget extends StatelessWidget {
                         return null;
                       },
                       onChanged: (value) {
-                        registerCubit.validateFormRegister();
+                        signUpCubit.validateFormRegister();
                       },
                       obsec: false),
                   CustomTextFormFiled(
-                      controller: registerCubit.userNameController,
+                      controller: signUpCubit.userNameController,
                       validator: (value) {
                         if (value!.isEmpty) {
                           return "Please Enter Username".tr(context);
@@ -51,38 +74,38 @@ class BodyRegisterWidget extends StatelessWidget {
                       },
                       title: "Username".tr(context),
                       onChanged: (value) {
-                        registerCubit.validateFormRegister();
+                        signUpCubit.validateFormRegister();
                       },
                       obsec: false),
                   CustomTextFormFiled(
-                      controller: registerCubit.passwordController,
+                      controller: signUpCubit.passwordController,
                       title: "Password".tr(context),
                       onChanged: (value) {
-                        registerCubit.validateFormRegister();
+                        signUpCubit.validateFormRegister();
                       },
                       validator: (value) {
                         if (value!.isEmpty) {
                           return "Please Enter Password".tr(context);
                         }
-                        if (registerCubit.passwordController.text !=
-                            registerCubit.confirmPasswordController.text) {
+                        if (signUpCubit.passwordController.text !=
+                            signUpCubit.confirmPasswordController.text) {
                           return "password is not equtable".tr(context);
                         }
                         return null;
                       },
                       obsec: false),
                   CustomTextFormFiled(
-                      controller: registerCubit.confirmPasswordController,
+                      controller: signUpCubit.confirmPasswordController,
                       title: "Confirm password".tr(context),
                       onChanged: (value) {
-                        registerCubit.validateFormRegister();
+                        signUpCubit.validateFormRegister();
                       },
                       validator: (value) {
                         if (value!.isEmpty) {
                           return "Please Enter Confirm Password".tr(context);
                         }
-                        if (registerCubit.passwordController.text !=
-                            registerCubit.confirmPasswordController.text) {
+                        if (signUpCubit.passwordController.text !=
+                            signUpCubit.confirmPasswordController.text) {
                           return "password is not equtable".tr(context);
                         }
                         return null;
@@ -93,20 +116,30 @@ class BodyRegisterWidget extends StatelessWidget {
                     width: MediaQuery.of(context).size.width * 0.4,
                     height: 40,
                     child: ElevatedButton(
-                      onPressed: registerCubit.isActive ? () {} : null,
+                      onPressed: state.isActive
+                          ? () {
+                              BlocProvider.of<SignUpCubit>(context)
+                                  .signUpNewUser();
+                            }
+                          : null,
                       style: ButtonStyle(
                         elevation: WidgetStateProperty.all<double>(0),
                         shape: WidgetStateProperty.all<OutlinedBorder>(
                             RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12),
                         )),
-                        //     backgroundColor: WidgetStateProperty.all<Color>(
-                        //     registerCubit.isActive
-                        //       ? registerCubit.loginActiveButtonColor
-                        //     : registerCubit.loginUnActiveButtonColor,
-                        //),
+                        backgroundColor: WidgetStateProperty.all<Color>(
+                          !state.isActive
+                              ? Theme.of(context).colorScheme.onPrimary
+                              : Theme.of(context).colorScheme.primary,
+                        ),
                       ),
-                      child: Text("Sign up".tr(context)),
+                      child: Text(
+                        "Sign up".tr(context),
+                        style: TextStyle(
+                          color: Theme.of(context).colorScheme.inversePrimary,
+                        ),
+                      ),
                     ),
                   ),
                 ],

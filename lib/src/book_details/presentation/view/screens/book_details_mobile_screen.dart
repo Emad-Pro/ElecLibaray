@@ -2,7 +2,6 @@ import 'package:elec_lib_app/core/widget/build_item_listview_books.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
-import '../../../../auth/login/presentation/view/widget/button_aut_login.dart';
 
 class BookDetailsMobileScreen extends StatelessWidget {
   const BookDetailsMobileScreen({super.key});
@@ -68,7 +67,7 @@ class BookDetailsMobileScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                Text(
+                const Text(
                   randomText,
                   textAlign: TextAlign.justify,
                 )

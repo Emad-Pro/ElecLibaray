@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../../../../../core/theme/colors.dart';
 import '../widget/appbar_register_widget.dart';
 import '../widget/body_register_widget.dart';
 
