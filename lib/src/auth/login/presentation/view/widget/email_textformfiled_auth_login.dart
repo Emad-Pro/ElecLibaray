@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import '../../../../../../core/widget/custom_text_form_field.dart';
 import '../../view_model/cubit/login_cubit.dart';
 
-class UserNameTextFormFiledAuthLogin extends StatelessWidget {
-  const UserNameTextFormFiledAuthLogin({
+class EmailTextFormFiledAuthLogin extends StatelessWidget {
+  const EmailTextFormFiledAuthLogin({
     super.key,
     required this.loginCubit,
   });
@@ -18,7 +18,7 @@ class UserNameTextFormFiledAuthLogin extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 7.5),
       child: CustomTextFormFiled(
         title: "Username".tr(context),
-        controller: loginCubit.userNameController,
+        controller: loginCubit.emailController,
         obsec: false,
         onChanged: (value) {
           loginCubit.validateUserNameAndPassword();

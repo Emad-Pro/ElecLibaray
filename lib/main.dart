@@ -65,7 +65,7 @@ class MyApp extends StatelessWidget {
                 }
                 return supportedLocales.first;
               },
-              title: 'Expense Tracker',
+              title: 'Elec Lib',
               theme: FlexThemeData.light(
                   scheme: FlexScheme.espresso, useMaterial3: true),
               darkTheme: FlexThemeData.dark(
