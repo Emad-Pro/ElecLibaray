@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../widget/appbar_register_widget.dart';
-import '../widget/body_register_widget.dart';
+import '../widget/appbar_sign_up_widget.dart';
+import '../widget/body_sign_up_widget.dart';
 
-class RegisterTabletScreen extends StatelessWidget {
-  const RegisterTabletScreen({
+class SignUpTabletScreen extends StatelessWidget {
+  const SignUpTabletScreen({
     super.key,
   });
 
@@ -14,13 +14,13 @@ class RegisterTabletScreen extends StatelessWidget {
     return Scaffold(
       body: CustomScrollView(
         slivers: [
-          const AppbarRegisterWidget(),
+          const AppbarSignUpWidget(),
           SliverFillRemaining(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Expanded(
-                  child: BodyRegisterWidget(),
+                  child: BodySignUpWidget(),
                 ),
                 Expanded(
                   flex: 1,

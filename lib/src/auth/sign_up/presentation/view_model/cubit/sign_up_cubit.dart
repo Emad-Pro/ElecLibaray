@@ -7,7 +7,7 @@ import 'package:equatable/equatable.dart';
 
 import 'package:flutter/material.dart';
 
-part 'register_state.dart';
+part 'sign_up_state.dart';
 
 class SignUpCubit extends Cubit<SignUpState> {
   // ignore: prefer_const_constructors
@@ -29,6 +29,14 @@ class SignUpCubit extends Cubit<SignUpState> {
     } else {
       emit(state.copyWith(isActive: false));
     }
+  }
+
+  void claearFailed() {
+    userNameController.clear();
+    passwordController.clear();
+    emailController.clear();
+    confirmPasswordController.clear();
+    emit(state.copyWith(isActive: false));
   }
 
   signUpNewUser() async {

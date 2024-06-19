@@ -6,10 +6,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 import '../../../../../../core/widget/custom_text_form_field.dart';
-import '../../view_model/cubit/register_cubit.dart';
+import '../../view_model/cubit/sign_up_cubit.dart';
 
-class BodyRegisterWidget extends StatelessWidget {
-  const BodyRegisterWidget({
+class BodySignUpWidget extends StatelessWidget {
+  const BodySignUpWidget({
     super.key,
   });
 
@@ -36,6 +36,7 @@ class BodyRegisterWidget extends StatelessWidget {
             EasyLoading.showSuccess(
               state.signUpNewUserMessage,
             );
+            BlocProvider.of<SignUpCubit>(context).claearFailed();
           }
         },
         builder: (context, state) {

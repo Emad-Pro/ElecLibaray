@@ -2,7 +2,7 @@ import 'package:elec_lib_app/core/AppLocalizations/app_localizations.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/responsive_layout/app_styles.dart';
-import '../../../sign_up/presentation/view/register_screen.dart';
+import '../../../sign_up/presentation/view/sign_up_screen.dart';
 
 class LoginOrRegisterButtonSignUp extends StatelessWidget {
   const LoginOrRegisterButtonSignUp({
@@ -23,7 +23,7 @@ class LoginOrRegisterButtonSignUp extends StatelessWidget {
       ),
       onPressed: () {
         Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const RegisterLayout()));
+            MaterialPageRoute(builder: (context) => const SignUpLayout()));
       },
       child: Text(
         "Sign up".tr(context),

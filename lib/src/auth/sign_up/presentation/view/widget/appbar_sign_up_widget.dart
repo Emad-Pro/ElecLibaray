@@ -1,9 +1,8 @@
 import 'package:elec_lib_app/core/AppLocalizations/app_localizations.dart';
 import 'package:flutter/material.dart';
 
-
-class AppbarRegisterWidget extends StatelessWidget {
-  const AppbarRegisterWidget({
+class AppbarSignUpWidget extends StatelessWidget {
+  const AppbarSignUpWidget({
     super.key,
   });
 

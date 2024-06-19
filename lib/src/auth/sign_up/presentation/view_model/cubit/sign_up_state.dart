@@ -1,4 +1,4 @@
-part of 'register_cubit.dart';
+part of 'sign_up_cubit.dart';
 
 class SignUpState extends Equatable {
   final bool isActive;
