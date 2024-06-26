@@ -1,1 +1,1 @@
-enum AuthRequestState { normal, loading, success, erorr }
+enum RequestState { loading, success, erorr }

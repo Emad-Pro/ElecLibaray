@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
+import '../global_model/books_model.dart';
 import '../responsive_layout/app_styles.dart';
 
 class BuildItemListViewBooks extends StatelessWidget {
   const BuildItemListViewBooks(
-      {super.key, required this.colorText, required this.imagePath});
+      {super.key, required this.colorText, required this.bookModel});
   final Color colorText;
-  final String imagePath;
+  final BooksModel bookModel;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -19,8 +20,8 @@ class BuildItemListViewBooks extends StatelessWidget {
             width: 120,
             child: ClipRRect(
               borderRadius: BorderRadius.circular(12),
-              child: Image.asset(
-                imagePath,
+              child: Image.network(
+                bookModel.bookLogo,
                 fit: BoxFit.fill,
               ),
             ),
@@ -28,7 +29,7 @@ class BuildItemListViewBooks extends StatelessWidget {
           FittedBox(
             fit: BoxFit.scaleDown,
             child: Text(
-              "A Spark of Ligh",
+              bookModel.bookName,
               style: TextStyle(
                   color: colorText,
                   fontSize: getResponsiveFontSize(context, fontSize: 18)),
@@ -37,7 +38,7 @@ class BuildItemListViewBooks extends StatelessWidget {
           FittedBox(
             fit: BoxFit.scaleDown,
             child: Text(
-              "jodi picoult",
+              bookModel.authroName,
               style: TextStyle(
                   color: colorText,
                   fontSize: getResponsiveFontSize(context, fontSize: 16)),

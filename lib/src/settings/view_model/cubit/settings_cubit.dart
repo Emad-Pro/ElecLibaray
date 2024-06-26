@@ -1,4 +1,6 @@
 import 'package:bloc/bloc.dart';
+import 'package:elec_lib_app/core/import.dart';
+import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/AppLocalizations/app_localizations.dart';
@@ -15,6 +17,15 @@ class SettingsCubit extends Cubit<SettingsState> {
   changeThemeMode() async {
     emit(ThemeSettingChangedLoadingState());
     await ThemeService.changeDarkMode();
+    emit(ThemeSettingChangedSuccessState());
+  }
+
+  chaneColor(newValue) {
+    emit(ThemeSettingChangedLoadingState());
+    ThemeService.selectColorValue = newValue;
+    ThemeService.flexschemeColor = FlexScheme.values.byName(newValue);
+    FlexScheme.values.byName(newValue);
+    CacheHelper.saveData(key: "colorApp", value: newValue);
     emit(ThemeSettingChangedSuccessState());
   }
 

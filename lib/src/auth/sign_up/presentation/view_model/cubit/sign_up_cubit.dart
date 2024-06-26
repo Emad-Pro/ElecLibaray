@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 
-import 'package:elec_lib_app/core/enum/state.dart';
+import 'package:elec_lib_app/core/enum/auth_state.dart';
 import 'package:elec_lib_app/src/auth/sign_up/data/model/sign_up_set_model.dart';
 import 'package:elec_lib_app/src/auth/sign_up/data/repository/sign_up_repository.dart';
 import 'package:equatable/equatable.dart';

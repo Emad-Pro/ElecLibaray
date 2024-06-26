@@ -9,14 +9,18 @@ class HomeTabletScreens extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Row(
-        children: [
-          const Expanded(flex: 3, child: MyDrawer()),
-          Expanded(
-            flex: 7,
-            child: context.read<HomeCubit>().state.widgetLayout,
-          ),
-        ],
+      body: BlocBuilder<HomeCubit, HomeState>(
+        builder: (context, state) {
+          return Row(
+            children: [
+              const Expanded(flex: 3, child: MyDrawer()),
+              Expanded(
+                flex: 7,
+                child: context.read<HomeCubit>().state.widgetLayout,
+              ),
+            ],
+          );
+        },
       ),
     );
   }

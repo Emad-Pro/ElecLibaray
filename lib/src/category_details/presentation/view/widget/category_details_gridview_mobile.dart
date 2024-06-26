@@ -35,8 +35,7 @@ class CategoryDetailsMobileGridView extends StatelessWidget {
                   return Center(
                     child: Padding(
                       padding: const EdgeInsets.all(12),
-                      child: BuildItemListViewBooksWithWidgetStack(
-                          imagePath: image[index]),
+                      child: BuildItemListViewBooksWithWidgetStack(),
                     ),
                   );
                 }),

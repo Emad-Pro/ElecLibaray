@@ -1,5 +1,5 @@
 import 'package:elec_lib_app/core/AppLocalizations/app_localizations.dart';
-import 'package:elec_lib_app/core/enum/state.dart';
+import 'package:elec_lib_app/core/enum/auth_state.dart';
 import 'package:elec_lib_app/core/get_It/service_locator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

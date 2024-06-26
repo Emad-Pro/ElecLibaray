@@ -13,7 +13,7 @@ class MyDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       elevation: 1,
-      backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+      backgroundColor: Theme.of(context).colorScheme.primary,
       child: BlocBuilder<HomeCubit, HomeState>(
         builder: (context, state) {
           return Column(

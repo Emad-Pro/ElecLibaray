@@ -1,54 +1,52 @@
-import 'package:flutter/foundation.dart';
+import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../../src/settings/view_model/cubit/settings_cubit.dart';
 import '../sharedPreferences/cahce_helper.dart';
 
 class ThemeService {
-  ThemeData lightMode(context) => ThemeData(
-        useMaterial3: false,
-        fontFamily:
-            BlocProvider.of<SettingsCubit>(context).locale!.languageCode == "en"
-                ? "Rubic"
-                : "Cairo",
-        brightness: Brightness.light,
-        colorScheme: ColorScheme.light(
-          surface: Colors.grey.shade300,
-          primary: Colors.grey.shade200,
-          secondary: Colors.grey.shade400,
-          inversePrimary: Colors.grey.shade800,
-        ),
-      );
-
-  ThemeData darkMode(context) => ThemeData(
-        useMaterial3: false,
-        brightness: Brightness.dark,
-        fontFamily:
-            BlocProvider.of<SettingsCubit>(context).locale!.languageCode == "en"
-                ? "Rubic"
-                : "Cairo",
-        colorScheme: ColorScheme.dark(
-          surface: Colors.grey.shade900,
-          primary: Colors.grey.shade800,
-          secondary: Colors.grey.shade700,
-          inversePrimary: Colors.grey.shade300,
-        ),
-      );
+  static FlexScheme flexschemeColor = FlexScheme.aquaBlue;
+  static String? selectColorValue = 'aquaBlue';
   static bool darkModeValue = false;
+  static ThemeData lightTheme(context) {
+    return FlexThemeData.light(
+      scheme: flexschemeColor,
+      useMaterial3: true,
+      fontFamily:
+          BlocProvider.of<SettingsCubit>(context).locale!.languageCode == "en"
+              ? "Rubic"
+              : "Cairo",
+    );
+  }
+
+  static ThemeData darkTheme(context) {
+    return FlexThemeData.dark(
+      scheme: flexschemeColor,
+      useMaterial3: true,
+      fontFamily:
+          BlocProvider.of<SettingsCubit>(context).locale!.languageCode == "en"
+              ? "Rubic"
+              : "Cairo",
+    );
+  }
+
   static Future themeInit() async {
-    if (CacheHelper.getSaveData(key: "darkMode") == null) {
-      CacheHelper.saveData(key: "darkMode", value: false);
+    bool? darkModeCached = await CacheHelper.getSaveData(key: "darkMode");
+    if (darkModeCached == null) {
+      await CacheHelper.saveData(key: "darkMode", value: false);
+      darkModeCached = await CacheHelper.getSaveData(key: "darkMode");
     }
-    darkModeValue = await CacheHelper.getSaveData(key: "darkMode");
+    darkModeValue = darkModeCached!;
+
+    final getCachedTheme = CacheHelper.getSaveData(key: "colorApp");
+    if (getCachedTheme != null) {
+      flexschemeColor = FlexScheme.values.byName(getCachedTheme);
+      selectColorValue = getCachedTheme;
+    }
   }
 
   static Future changeDarkMode() async {
-    if (kDebugMode) {
-      print(darkModeValue);
-    }
     darkModeValue = !darkModeValue;
-
     await CacheHelper.saveData(key: "darkMode", value: darkModeValue);
   }
 }

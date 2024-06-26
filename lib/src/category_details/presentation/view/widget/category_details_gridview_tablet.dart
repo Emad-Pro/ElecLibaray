@@ -31,8 +31,7 @@ class CategoryDetailsGridViewTablet extends StatelessWidget {
               itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.all(12),
-                  child: BuildItemListViewBooksWithWidgetStack(
-                      imagePath: image[index]),
+                  child: BuildItemListViewBooksWithWidgetStack(),
                 );
               }),
         ],

@@ -23,20 +23,20 @@ class BuildDrawerItem extends StatelessWidget {
       margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(6),
-          color: isSelected ? color.primary : color.inversePrimary),
+          color: isSelected ? color.secondary : color.inversePrimary),
       child: ListTile(
           onTap: () {
             context.read<HomeCubit>().changeSelectedPageDrawer(index: index);
           },
           leading: Icon(
             drawerModel.icon,
-            color: isSelected ? color.surface : color.onPrimary,
+            color: isSelected ? color.surface : color.primary,
           ),
           title: Text(
             drawerModel.title.tr(context),
             style: TextStyle(
                 fontSize: 14,
-                color: isSelected ? color.surface : color.onPrimary,
+                color: isSelected ? color.surface : color.primary,
                 fontWeight: FontWeight.normal),
           )),
     );

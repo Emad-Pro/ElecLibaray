@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'widget/settings_color_app.dart';
 import 'widget/settings_language.dart';
 import 'widget/settings_profile.dart';
 import 'widget/settings_theme_mode.dart';
@@ -17,6 +18,7 @@ class SettingsLayout extends StatelessWidget {
           SettingsProfile(),
           SettingsThemeMode(),
           SettingsLanguage(),
+          SettingsColorApp(),
         ],
       ),
     );

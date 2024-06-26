@@ -27,9 +27,7 @@ class MainBooksMyWashlistWidget extends StatelessWidget {
               shrinkWrap: true,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
-                return BuildItemListViewBooksWithWidgetStack(
-                  imagePath: images[index],
-                );
+                return BuildItemListViewBooksWithWidgetStack();
               },
               separatorBuilder: (context, index) {
                 return const SizedBox(width: 10);

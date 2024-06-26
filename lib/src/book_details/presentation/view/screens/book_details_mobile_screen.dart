@@ -1,7 +1,9 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:elec_lib_app/core/widget/build_item_listview_books.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
+import '../../../../../core/global_model/books_model.dart';
 
 class BookDetailsMobileScreen extends StatelessWidget {
   const BookDetailsMobileScreen({super.key});
@@ -20,8 +22,17 @@ class BookDetailsMobileScreen extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 10.0),
                   child: BuildItemListViewBooks(
-                      colorText: color.onSurface,
-                      imagePath: "assets/images/image_test/1.png"),
+                    colorText: color.onSurface,
+                    bookModel: BooksModel(
+                        authroName: 'شسيشسي',
+                        booksDetails: 'شسيشسيشس',
+                        bookName: 'شسيشسيشسيشسي',
+                        bookLogo: 'شسيشسيشسيشس',
+                        bookPage: 200,
+                        bookVersion: '2',
+                        category: 'شسيشسي',
+                        bookDate: Timestamp.now()),
+                  ),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,

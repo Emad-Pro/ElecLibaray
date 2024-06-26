@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
+import '../../../../../core/global_model/books_model.dart';
 import '../../../../../core/widget/build_item_listview_books.dart';
 
 class MainBooksListViewHeaderHorizontalArch extends StatelessWidget {
-  const MainBooksListViewHeaderHorizontalArch({
-    super.key,
-  });
-
+  const MainBooksListViewHeaderHorizontalArch(
+      {super.key, required this.booksModel});
+  final List<BooksModel> booksModel;
   @override
   Widget build(BuildContext context) {
     final color = Theme.of(context).colorScheme.surface;
@@ -19,7 +19,7 @@ class MainBooksListViewHeaderHorizontalArch extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
             return BuildItemListViewBooks(
-              imagePath: images[index],
+              bookModel: booksModel[index],
               colorText: color,
             );
           },
