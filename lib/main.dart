@@ -13,8 +13,9 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'core/theme/theme.dart';
-import 'src/auth/login_or_register/view/login_or_signup_layout.dart';
+
 import 'src/auth/user_data/user_data.dart';
+import 'src/author/presentation/view_model/cubit/author_cubit.dart';
 import 'src/main/presentation/view_model/cubit/main_books_cubit.dart';
 
 void main() async {
@@ -48,7 +49,11 @@ class MyApp extends StatelessWidget {
           create: (context) => HomeCubit(),
         ),
         BlocProvider(
-            create: (context) => MainBooksCubit(getIt())..getMainData())
+          create: (context) => MainBooksCubit(getIt())..getMainData(),
+        ),
+        BlocProvider(
+          create: (context) => AuthorCubit(getIt())..getAuthors(),
+        )
       ],
       child: BlocBuilder<SettingsCubit, SettingsState>(
         builder: (context, state) {
